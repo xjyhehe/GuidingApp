@@ -16,7 +16,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!--开发者申请的key-->
-    <meta-data android:name="com.amap.api.v2.apikey" android:value="1f3d992099abc6ea805cc1a57a668d33"/>
+    <meta-data
+        android:name="com.amap.api.v2.apikey"
+        android:value="1f3d992099abc6ea805cc1a57a668d33" />
 
     <application
         android:allowBackup="true"
@@ -35,6 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>
