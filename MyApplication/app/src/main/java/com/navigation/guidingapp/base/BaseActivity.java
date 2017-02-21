@@ -1,4 +1,4 @@
-package com.nevagation.guidingapp.base;
+package com.navigation.guidingapp.base;
 
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;

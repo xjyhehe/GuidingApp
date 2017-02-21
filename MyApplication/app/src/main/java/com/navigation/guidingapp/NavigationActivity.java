@@ -1,4 +1,4 @@
-package com.nevagation.guidingapp;
+package com.navigation.guidingapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 
-public class FullscreenActivity extends AppCompatActivity {
+public class NavigationActivity extends AppCompatActivity {
 
     private MapView mMapView = null;
     private AMap aMap = null;

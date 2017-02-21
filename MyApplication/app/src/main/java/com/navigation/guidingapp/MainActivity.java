@@ -1,9 +1,10 @@
-package com.nevagation.guidingapp;
+package com.navigation.guidingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.nevagation.guidingapp.base.BaseActivity;
+import com.navigation.guidingapp.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -24,6 +25,8 @@ public class MainActivity extends BaseActivity {
                 //视频录像
                 break;
             case R.id.ib_navigate:
+                Intent navigateIntent = new Intent(this,NavigationActivity.class);
+                startActivity(navigateIntent);
                 //导航
                 break;
             case R.id.ib_update:
@@ -33,5 +36,6 @@ public class MainActivity extends BaseActivity {
                 //设置
                 break;
         }
+
     }
 }
