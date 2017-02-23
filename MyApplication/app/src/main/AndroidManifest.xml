@@ -24,7 +24,7 @@
     <!-- 开发者申请的key -->
     <meta-data
         android:name="com.amap.api.v2.apikey"
-        android:value="fd2bc41f73903163c174399b02d0f32e" />
+        android:value="ca03f143a786a1c472ec75935fd9af61" />
 
     <application
         android:allowBackup="true"
