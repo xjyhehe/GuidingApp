@@ -20,6 +20,11 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void initListener() {
+
+    }
+
 
     @OnClick({R.id.ib_video, R.id.ib_navigate, R.id.ib_update, R.id.ib_setting})
     public void buttonClick(View v) {

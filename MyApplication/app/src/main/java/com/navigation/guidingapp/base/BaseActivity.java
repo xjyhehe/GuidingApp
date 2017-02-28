@@ -22,6 +22,10 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 初始化控件
      */
     public abstract void initView();
+    /**
+     * 初始化监听
+     */
+    public abstract void initListener();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         //初始化View注入
         ButterKnife.bind(this);
         initView();
+        initListener();
     }
 
 

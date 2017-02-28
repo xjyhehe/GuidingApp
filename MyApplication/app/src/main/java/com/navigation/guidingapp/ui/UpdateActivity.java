@@ -22,4 +22,9 @@ public class UpdateActivity extends BaseActivity {
     public void initView() {
 
     }
+
+    @Override
+    public void initListener() {
+
+    }
 }

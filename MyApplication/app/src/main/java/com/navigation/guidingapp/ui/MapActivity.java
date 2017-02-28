@@ -26,14 +26,32 @@ import butterknife.OnClick;
 
 public class MapActivity extends BaseActivity implements LocationSource,AMapLocationListener{
 
-    @BindView(R.id.map_view)
-    MapView mapView;
+    @BindView(R.id.map_view) MapView mapView;
 
+    /**
+     * 地图对象
+     */
     private AMap aMap;
+    /**
+     * 定位改变回调
+     */
     private OnLocationChangedListener mListener;
+    /**
+     * 定位操作对象
+     */
     private AMapLocationClient mlocationClient;
+    /**
+     * 定位配置
+     */
     private AMapLocationClientOption mLocationOption;
+    /**
+     * 显示定位Mark
+     */
     private BitmapDescriptor icon;
+    /**
+     * 定位城市
+     */
+    private String city;
 
 
     @Override
@@ -43,15 +61,20 @@ public class MapActivity extends BaseActivity implements LocationSource,AMapLoca
 
     @Override
     public void initView() {
-        icon = BitmapDescriptorFactory.fromBitmap(BitmapFactory
-                .decodeResource(getResources(),
+        icon = BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(),
                         R.drawable.gps_point));
+    }
+
+    @Override
+    public void initListener() {
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mapView.onCreate(savedInstanceState);// 此方法必须重写
+        mapView.onCreate(savedInstanceState);
+        //初始化
         init();
     }
 
@@ -61,13 +84,18 @@ public class MapActivity extends BaseActivity implements LocationSource,AMapLoca
     private void init() {
         if (aMap == null) {
             aMap = mapView.getMap();
+            //配置地图信息
             setUpMap();
         }
     }
 
+    /**
+     * 添加搜索按钮监听
+     */
     @OnClick(R.id.fab)
     public void onClick(){
         Intent intent = new Intent(this,SearchActivity.class);
+        intent.putExtra("city",city);
         startActivity(intent);
     }
 
@@ -137,6 +165,7 @@ public class MapActivity extends BaseActivity implements LocationSource,AMapLoca
                                 location, 18, 0, 0)),1000,null);
                 aMap.clear();
                 aMap.addMarker(new MarkerOptions().position(location).icon(icon));
+                city = amapLocation.getCity();
             } else {
                 showToast("正在定位中...");
             }

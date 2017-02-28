@@ -22,4 +22,9 @@ public class VideoActivity extends BaseActivity {
     public void initView() {
 
     }
+
+    @Override
+    public void initListener() {
+
+    }
 }
